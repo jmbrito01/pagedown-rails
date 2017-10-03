@@ -1735,9 +1735,9 @@
             // The function to be executed when you enter a link and press OK or Cancel.
             // Marks up the link and adds the ref.
             var linkEnteredCallback = function (link) {
-
-                background.parentNode.removeChild(background);
-
+                if (document.contains(background)) {
+                    background.parentNode.removeChild(background);
+                }
                 if (link !== null) {
                     // (                          $1
                     //     [^\\]                  anything that's not a backslash
